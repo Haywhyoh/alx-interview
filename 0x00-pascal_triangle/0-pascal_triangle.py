@@ -18,4 +18,3 @@ def pascal_triangle(n):
         previous = temp
         pascal_list.append(temp)
     return pascal_list
-print(pascal_triangle(6))
