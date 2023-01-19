@@ -25,6 +25,7 @@ for line in sys.stdin:
             print('200: {}'.format(status_dict['200']))
             print('301: {}'.format(status_dict['301']))
             print('400: {}'.format(status_dict['400']))
+            print('401: {}'.format(status_dict['401']))
             print('403: {}'.format(status_dict['403']))
             print('404: {}'.format(status_dict['404']))
             print('405: {}'.format(status_dict['405']))
