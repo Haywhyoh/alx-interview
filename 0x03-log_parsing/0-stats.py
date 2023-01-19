@@ -14,12 +14,23 @@ status_dict = {
             }
 i = 0
 for line in sys.stdin:
-    line_array = line.split()
-    i = i + 1
-    total_size = int(line_array[-1]) + total_size
-    status_dict[line_array[-2]] = int(status_dict[line_array[-2]]) + 1
+    try:
+        line_array = line.split()
+        i = i + 1
+        total_size = int(line_array[-1]) + total_size
+        status_dict[line_array[-2]] = int(status_dict[line_array[-2]]) + 1
 
-    if i % 10 == 0:
+        if i % 10 == 0:
+            print("File size: {}".format(total_size))
+            print('200: {}'.format(status_dict['200']))
+            print('301: {}'.format(status_dict['301']))
+            print('400: {}'.format(status_dict['400']))
+            print('403: {}'.format(status_dict['403']))
+            print('404: {}'.format(status_dict['404']))
+            print('405: {}'.format(status_dict['405']))
+            print('500: {}'.format(status_dict['500']))
+    except KeyboardInterrupt:
+        """ Keyboard interruption, print from the beginning """
         print("File size: {}".format(total_size))
         print('200: {}'.format(status_dict['200']))
         print('301: {}'.format(status_dict['301']))
@@ -28,3 +39,4 @@ for line in sys.stdin:
         print('404: {}'.format(status_dict['404']))
         print('405: {}'.format(status_dict['405']))
         print('500: {}'.format(status_dict['500']))
+        raise
